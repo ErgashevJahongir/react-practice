@@ -4,6 +4,12 @@ import { Routes } from "react-router-dom";
 import Home from "./home";
 import Products from "./products";
 import About from "./about";
+import ComponentA from "./components/ComponentA";
+import { UserContext, UserProvider } from "./components/userContext";
+import ClassCounter from "./Hook/classCounter";
+import HookCounter from "./Hook/hookCounter";
+import DataFetching from "./Hook/DataFetching";
+import ComponentC from "./components/ComponentC";
 
 class App extends PureComponent {
     render() {
@@ -41,6 +47,25 @@ class App extends PureComponent {
                             component={<About />}
                         ></Route>
                     </Routes>
+                </div>
+                <div>
+                    <UserProvider value="">
+                        <ComponentA />
+                    </UserProvider>
+                </div>
+                <div>
+                    <ClassCounter />
+                    <br />
+                    <br />
+                    <HookCounter />
+                    <br />
+                    <br />
+                    <DataFetching />
+                </div>
+                <div>
+                    <UserContext.Provider value={"Joha"}>
+                        <ComponentC />
+                    </UserContext.Provider>
                 </div>
             </BrowserRouter>
         );
