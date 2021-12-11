@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Searchbar from "./searchbar";
 import ProductTable from "./productTable";
 
-class FilterableProductTable extends Component {
+class FilterableProductTable extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
